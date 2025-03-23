@@ -7,6 +7,13 @@ import Sidebar from "@/components/Sidebar";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+  ArrowDownToDot,
+  CircleStop,
+  FastForward,
+  Pause,
+  PlayCircle,
+} from "lucide-react";
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -16,45 +23,24 @@ export default function Dashboard() {
       <Navbar />
       <main className="flex flex-row items-start justify-start flex-auto relative">
         <Card className="flex flex-col items-center justify-start gap-3 min-w-10 p-2">
-          <Button variant="ghost" size="icon" className="w-5 h-5 my-1">
-            <Image
-              src="/assets/play.svg"
-              alt="play button"
-              width={70}
-              height={70}
-            />
+          <Button variant="ghost" size="icon" className="hover:text-green-600">
+            <PlayCircle size={200} className="text-green-500" />
           </Button>
-          <Button variant="ghost" size="icon" className="w-5 h-5 my-1">
-            <Image
-              src="/assets/pause.svg"
-              alt="play button"
+          <Button variant="ghost" size="icon" className="hover:text-yellow-600">
+            <Pause size={100} className="text-yellow-500" />
+          </Button>
+          <Button variant="ghost" size="icon" className="hover:text-red-600">
+            <CircleStop size={100} className="text-red-500" />
+          </Button>
+          <Button variant="ghost" size="icon" className="hover:text-blue-600">
+            <ArrowDownToDot
               width={100}
               height={100}
+              className="text-blue-500"
             />
           </Button>
-          <Button variant="ghost" size="icon" className="w-5 h-5 my-1">
-            <Image
-              src="/assets/stop.svg"
-              alt="play button"
-              width={30}
-              height={30}
-            />
-          </Button>
-          <Button variant="ghost" size="icon" className="w-5 h-5 my-1">
-            <Image
-              src="/assets/stepInto.svg"
-              alt="play button"
-              width={20}
-              height={20}
-            />
-          </Button>
-          <Button variant="ghost" size="icon" className="w-5 h-5 my-1">
-            <Image
-              src="/assets/speedControl.svg"
-              alt="play button"
-              width={30}
-              height={30}
-            />
+          <Button variant="ghost" size="icon" className="hover:text-purple-600">
+            <FastForward size={100} className="text-purple-500" />
           </Button>
         </Card>
         <Card

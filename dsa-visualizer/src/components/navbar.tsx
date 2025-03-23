@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
-export default function navbar() {
+export default function Navbar() {
   return (
     <nav className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
       <div className="flex items-center">
@@ -36,9 +37,14 @@ export default function navbar() {
           About
         </Link>
       </div>
-      <button className="text-xl bg-[#68B7A4] text-white px-6 py-2 rounded-full hover:bg-[#5aa090] transition-colors">
-        Contact me
-      </button>
+      <Link href="/contact">
+        <Button
+          variant="default"
+          className="text-xl bg-[#68B7A4] text-white px-6 py-2 rounded-full hover:bg-[#5aa090] transition-colors"
+        >
+          Contact me
+        </Button>
+      </Link>
     </nav>
   );
 }
