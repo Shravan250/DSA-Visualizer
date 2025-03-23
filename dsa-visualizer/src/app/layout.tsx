@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Raleway, Young_Serif } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Inter,
+  Raleway,
+  Young_Serif,
+} from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -8,14 +15,13 @@ import "./globals.css";
 // });
 
 const raleway = Raleway({
-  variable: "--font-raleway",
-  weight: "600",
   subsets: ["latin"],
+  variable: "--font-raleway",
 });
 
 const youngSerif = Young_Serif({
-  subsets: ["latin"],
   weight: "400",
+  subsets: ["latin"],
   variable: "--font-young-serif",
 });
 
@@ -24,8 +30,10 @@ const youngSerif = Young_Serif({
 //   subsets: ["latin"],
 // });
 
+const inter = Inter({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
-  title: "ALgoArt",
+  title: "AlgoArt",
   description: "DSA Visualizer",
 };
 
@@ -38,8 +46,18 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${raleway.variable} ${youngSerif.variable} antialiased`}
+      suppressHydrationWarning
     >
-      <body className="font-raleway">{children}</body>
+      <body className="font-raleway">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

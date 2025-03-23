@@ -18,24 +18,24 @@ export default function Footer() {
           <div className="flex gap-8">
             <Link
               href="/news"
-              className="text-xl text-gray-600 hover:text-gray-900"
+              className="text-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               News
             </Link>
             <Link
               href="/algorithms"
-              className="text-xl text-gray-600 hover:text-gray-900"
+              className="text-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               Algorithms
             </Link>
             <Link
               href="/about"
-              className="text-xl text-gray-600 hover:text-gray-900"
+              className="text-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               About
             </Link>
           </div>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-gray-300">
             Copyright © 2025 Shravan Bobade
           </p>
         </CardContent>

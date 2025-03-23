@@ -8,7 +8,7 @@ import { Separator } from "@/components/ui/separator";
 
 export default function AlgorithmsPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-black">
       <Navbar />
       <main className="container mx-auto py-12">
         <div className="space-y-2 text-center mb-12">

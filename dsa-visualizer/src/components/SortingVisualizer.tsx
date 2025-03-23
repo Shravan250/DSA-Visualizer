@@ -227,7 +227,7 @@ const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
                   }`}
                   style={{ height: `${value * 20}px` }}
                 >
-                  <span className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-sm">
+                  <span className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-sm dark:text-black">
                     {index + 1}
                   </span>
                 </div>
@@ -237,13 +237,18 @@ const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
               <p className="text-sm text-gray-600">
                 Temp: {temp !== null ? temp : "-"}
               </p>
-              <Progress value={progress} className="w-[100px]" />
+              <Progress
+                value={progress}
+                className="w-[100px] dark:bg-gray-300 dark:text-white"
+              />
             </div>
           </div>
 
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="text-sm text-gray-500">Animation Speed:</span>
+              <span className="text-sm text-gray-500 dark:text-white">
+                Animation Speed:
+              </span>
               <Slider
                 defaultValue={[speed]}
                 max={500}
@@ -290,7 +295,7 @@ const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
             <h3 className="text-lg font-semibold mb-4">Implementation</h3>
             <Card>
               <CardContent className="p-0">
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+                <pre className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-4 rounded-lg overflow-x-auto">
                   <code className="text-sm">{getAlgorithmCode()}</code>
                 </pre>
               </CardContent>
