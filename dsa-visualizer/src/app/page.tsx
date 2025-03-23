@@ -5,26 +5,6 @@ import Footer from "@/components/footer";
 export default function Home() {
   return (
     <main className="min-h-screen relative">
-      {/* Toggle theme button */}
-      <div className="absolute left-0 hidden md:flex flex-row sm:top-40 md:top-32">
-        <button className="bg-[#68B7A4] p-2 md:p-3 sm:p-4 rounded-lg mt-10 md:mt-24 sm:mt-20 transition-all duration-300">
-          <Image
-            src="/assets/light-mode.svg"
-            alt="Toggle theme"
-            width={24}
-            height={24}
-            className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6"
-          />
-        </button>
-        <Image
-          src="/assets/arrow.svg"
-          alt="arrow frame"
-          width={150}
-          height={150}
-          className="w-24 h-24 xs:w-32 xs:h-32 sm:w-36 sm:h-36 md:w-40 md:h-40"
-        />
-      </div>
-
       {/* Navigation */}
       <Navbar />
 
@@ -178,6 +158,26 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Toggle theme button */}
+      <div className="absolute left-0 hidden md:flex flex-row sm:top-40 md:top-32">
+        <button className="bg-[#68B7A4] p-2 md:p-3 sm:p-4 rounded-lg mt-10 md:mt-24 sm:mt-20 transition-all duration-300">
+          <Image
+            src="/assets/light-mode.svg"
+            alt="Toggle theme"
+            width={24}
+            height={24}
+            className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6"
+          />
+        </button>
+        <Image
+          src="/assets/arrow.svg"
+          alt="arrow frame"
+          width={150}
+          height={150}
+          className="w-24 h-24 xs:w-32 xs:h-32 sm:w-36 sm:h-36 md:w-40 md:h-40"
+        />
+      </div>
     </main>
   );
 }

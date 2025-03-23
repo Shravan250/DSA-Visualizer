@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 type ErrorProps = {
   error: Error & { digest?: string };
 };
@@ -29,9 +30,11 @@ export default function GlobalError(error: ErrorProps) {
         Something went wrong. It's look that your requested could not be found.
         It's look like the link is broken or the page is removed.
       </p>
-      <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md transition-colors">
-        Go back to home
-      </button>
+      <Link href="/">
+        <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md transition-colors">
+          Go back to home
+        </button>
+      </Link>
     </div>
   );
 }
