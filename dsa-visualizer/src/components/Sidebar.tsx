@@ -62,53 +62,53 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
             className={`
               fixed md:absolute top-0 right-0 
               w-1/2 md:w-80 h-screen 
-              bg-white p-4 text-black 
+              bg-white dark:bg-black p-4 text-black dark:text-white
               shadow-lg md:shadow-none
               z-40 md:z-0
               ${isMobile ? "mt-16" : ""}
             `}
           >
             {/* Data Structures Section */}
-            <div className="mb-6">
+            <div className="mb-6 dark:bg-black">
               <Collapsible defaultOpen>
-                <CollapsibleTrigger className="flex items-center w-full text-lg font-semibold hover:text-[#68B7A4] transition-colors">
-                  <ChevronDown className="w-5 h-5 mr-2" />
+                <CollapsibleTrigger className="flex items-center w-full text-lg font-semibold hover:text-[#68B7A4] transition-colors dark:text-white">
+                  <ChevronDown className="w-5 h-5 mr-2 dark:text-white" />
                   Data Structures
                 </CollapsibleTrigger>
                 <CollapsibleContent className="ml-7 space-y-3">
                   <Link
                     href="/dashboard/array"
-                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors"
+                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Array
                   </Link>
                   <Link
                     href="/dashboard/linked-list"
-                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors"
+                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Linked List
                   </Link>
                   <Link
                     href="/dashboard/stack"
-                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors"
+                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Stack
                   </Link>
                   <Link
                     href="/dashboard/queue"
-                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors"
+                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Queue
                   </Link>
                   <Link
                     href="/dashboard/trees"
-                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors"
+                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Trees
                   </Link>
                   <Link
                     href="/dashboard/graph"
-                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors"
+                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Graph
                   </Link>
@@ -119,20 +119,20 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
             {/* Algorithms Section */}
             <div>
               <Collapsible>
-                <CollapsibleTrigger className="flex items-center w-full text-lg font-semibold hover:text-[#68B7A4] transition-colors">
-                  <ChevronRight className="w-5 h-5 mr-2" />
+                <CollapsibleTrigger className="flex items-center w-full text-lg font-semibold hover:text-[#68B7A4] transition-colors dark:text-white">
+                  <ChevronRight className="w-5 h-5 mr-2 dark:text-white" />
                   Algorithms
                 </CollapsibleTrigger>
                 <CollapsibleContent className="ml-7 space-y-3 mt-2">
                   <Link
                     href="/dashboard/sorting"
-                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors"
+                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Sorting
                   </Link>
                   <Link
                     href="/dashboard/searching"
-                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors"
+                    className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Searching
                   </Link>

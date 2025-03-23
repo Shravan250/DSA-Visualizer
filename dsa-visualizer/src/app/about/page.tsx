@@ -11,14 +11,14 @@ export default function About() {
       <Navbar />
       <main className="min-h-screen flex flex-col justify-center items-center">
         <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-16">
-          <Card className="border-none shadow-none mb-0">
+          <Card className="border-none shadow-none mb-0 dark:bg-black">
             {/* Main Title */}
-            <CardTitle className="text-4xl font-bold opacity-70">
+            <CardTitle className="text-4xl font-bold opacity-70 dark:opacity-90">
               <h1>My Name is Shravan...</h1>
             </CardTitle>
 
             {/* Personal Touch / Introduction */}
-            <CardContent className="px-0 text-lg text-gray-500 text-justify leading-relaxed tracking-wide">
+            <CardContent className="px-0 text-lg text-gray-500 dark:text-gray-300 text-justify leading-relaxed tracking-wide">
               I first discovered the magic of Data Structures &amp; Algorithms
               when I was tinkering with small coding projects, eager to find
               elegant solutions to everyday problems. From that moment, I fell
@@ -27,8 +27,8 @@ export default function About() {
             </CardContent>
 
             {/* Subheading: Why DSA? */}
-            <CardContent className="px-0 text-lg text-gray-500 text-justify leading-relaxed tracking-wide mt-6">
-              <h2 className="text-2xl font-semibold mb-4 text-gray-700">
+            <CardContent className="px-0 text-lg text-gray-500 dark:text-gray-300 text-justify leading-relaxed tracking-wide mt-6">
+              <h2 className="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-300">
                 Why DSA?
               </h2>
               In the world of data structures and algorithms , even the neatest
@@ -39,7 +39,7 @@ export default function About() {
             </CardContent>
 
             {/* Programming Humor & CTA */}
-            <CardContent className="px-0 text-lg text-gray-500 text-justify leading-relaxed tracking-wide mt-4">
+            <CardContent className="px-0 text-lg text-gray-500 dark:text-gray-300 text-justify leading-relaxed tracking-wide mt-4">
               Programming humor finds its home in the chaos of recursive
               functions and nested loops. Imagine an algorithm so deep that its
               base case is like a hidden Easter egg—just waiting for that “aha!”
@@ -61,7 +61,7 @@ export default function About() {
           </Card>
 
           {/* Illustration / Image */}
-          <Card className="border-none shadow-none mb-0 flex items-center justify-center">
+          <Card className="border-none shadow-none mb-0 flex items-center justify-center dark:bg-black">
             <Image
               src="/assets/working_late.svg"
               alt="Illustration of working late"

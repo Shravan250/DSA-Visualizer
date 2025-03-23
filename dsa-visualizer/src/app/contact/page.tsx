@@ -16,10 +16,10 @@ export default function Contact() {
       <main className="min-h-screen flex flex-col justify-center items-center py-16">
         <section className="max-w-5xl mx-auto px-6 w-full">
           <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Get in Touch
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
               Have questions about DSA Visualizer? Want to collaborate or share
               feedback? I'd love to hear from you!
             </p>
@@ -34,10 +34,10 @@ export default function Contact() {
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 dark:text-white">
                       Email
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 dark:text-gray-300">
                       shravan.bobade.tech@gmail.com
                     </p>
                   </div>
@@ -48,10 +48,12 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 dark:text-white">
                       Phone
                     </h3>
-                    <p className="text-gray-600">+91 7776000344</p>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      +91 7776000344
+                    </p>
                   </div>
                 </div>
 
@@ -60,49 +62,51 @@ export default function Contact() {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 dark:text-white">
                       Location
                     </h3>
-                    <p className="text-gray-600">Pune, Maharashtra, India</p>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Pune, Maharashtra, India
+                    </p>
                   </div>
                 </div>
 
                 <div className="pt-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4 dark:text-white">
                     Follow Me
                   </h3>
                   <div className="flex space-x-4">
                     <a
                       href="#"
-                      className="text-gray-600 hover:text-[#68B7A4] transition-colors"
+                      className="text-gray-600 hover:text-[#68B7A4] transition-colors dark:text-gray-300"
                     >
                       <Link
                         href="https://github.com/Shravan250"
                         target="_blank"
                       >
-                        <FaGithub className="h-6 w-6 text-black" />
+                        <FaGithub className="h-6 w-6 text-black dark:text-white" />
                       </Link>
                     </a>
                     <a
                       href="#"
-                      className="text-gray-600 hover:text-[#68B7A4] transition-colors"
+                      className="text-gray-600 hover:text-[#68B7A4] transition-colors dark:text-gray-300"
                     >
                       <Link
                         href="https://www.linkedin.com/in/shravan-bobade"
                         target="_blank"
                       >
-                        <FaLinkedin className="h-6 w-6 text-black" />
+                        <FaLinkedin className="h-6 w-6 text-black dark:text-white" />
                       </Link>
                     </a>
                     <a
                       href="#"
-                      className="text-gray-600 hover:text-[#68B7A4] transition-colors"
+                      className="text-gray-600 hover:text-[#68B7A4] transition-colors dark:text-gray-300"
                     >
                       <Link
                         href="https://medium.com/@shravan.bobade.tech"
                         target="_blank"
                       >
-                        <FaMedium className="h-6 w-6 text-black" />
+                        <FaMedium className="h-6 w-6 text-black dark:text-white" />
                       </Link>
                     </a>
                   </div>
@@ -118,7 +122,7 @@ export default function Contact() {
                     <div className="space-y-2">
                       <label
                         htmlFor="firstName"
-                        className="text-sm font-medium text-gray-700"
+                        className="text-sm font-medium text-gray-700 dark:text-white"
                       >
                         First Name
                       </label>
@@ -127,7 +131,7 @@ export default function Contact() {
                     <div className="space-y-2">
                       <label
                         htmlFor="lastName"
-                        className="text-sm font-medium text-gray-700"
+                        className="text-sm font-medium text-gray-700 dark:text-white"
                       >
                         Last Name
                       </label>
@@ -138,7 +142,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <label
                       htmlFor="email"
-                      className="text-sm font-medium text-gray-700"
+                      className="text-sm font-medium text-gray-700 dark:text-white"
                     >
                       Email
                     </label>
@@ -152,7 +156,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <label
                       htmlFor="subject"
-                      className="text-sm font-medium text-gray-700"
+                      className="text-sm font-medium text-gray-700 dark:text-white"
                     >
                       Subject
                     </label>
@@ -162,7 +166,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <label
                       htmlFor="message"
-                      className="text-sm font-medium text-gray-700"
+                      className="text-sm font-medium text-gray-700 dark:text-white"
                     >
                       Message
                     </label>

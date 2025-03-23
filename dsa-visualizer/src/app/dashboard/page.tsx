@@ -56,7 +56,7 @@ export default function Dashboard() {
         </Card>
         <div>
           {/* Sidebar */}
-          <div className="absolute top-0 right-0">
+          <div className="absolute top-0 right-0 dark:bg-black">
             <Sidebar
               isOpen={isSidebarOpen}
               toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
