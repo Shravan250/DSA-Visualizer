@@ -13,9 +13,14 @@ import {
 interface SidebarProps {
   isOpen: boolean;
   toggleSidebar: () => void;
+  onSelectStrategy: (strategyKey: string) => void;
 }
 
-export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
+export default function Sidebar({
+  isOpen,
+  toggleSidebar,
+  onSelectStrategy,
+}: SidebarProps) {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [mounted, setMounted] = useState<boolean>(false);
 
@@ -76,42 +81,42 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
                   Data Structures
                 </CollapsibleTrigger>
                 <CollapsibleContent className="ml-7 space-y-3">
-                  <Link
-                    href="/dashboard/array"
+                  <div
+                    onClick={() => onSelectStrategy("array")}
                     className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Array
-                  </Link>
-                  <Link
-                    href="/dashboard/linked-list"
+                  </div>
+                  <div
+                    onClick={() => onSelectStrategy("linked-list")}
                     className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Linked List
-                  </Link>
-                  <Link
-                    href="/dashboard/stack"
+                  </div>
+                  <div
+                    onClick={() => onSelectStrategy("stack")}
                     className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Stack
-                  </Link>
-                  <Link
-                    href="/dashboard/queue"
+                  </div>
+                  <div
+                    onClick={() => onSelectStrategy("queue")}
                     className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Queue
-                  </Link>
-                  <Link
-                    href="/dashboard/trees"
+                  </div>
+                  <div
+                    onClick={() => onSelectStrategy("trees")}
                     className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Trees
-                  </Link>
-                  <Link
-                    href="/dashboard/graph"
+                  </div>
+                  <div
+                    onClick={() => onSelectStrategy("graph")}
                     className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Graph
-                  </Link>
+                  </div>
                 </CollapsibleContent>
               </Collapsible>
             </div>
@@ -124,18 +129,18 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
                   Algorithms
                 </CollapsibleTrigger>
                 <CollapsibleContent className="ml-7 space-y-3 mt-2">
-                  <Link
-                    href="/dashboard/sorting"
+                  <div
+                    onClick={() => onSelectStrategy("sorting")}
                     className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Sorting
-                  </Link>
-                  <Link
-                    href="/dashboard/searching"
+                  </div>
+                  <div
+                    onClick={() => onSelectStrategy("searching")}
                     className="block text-gray-700 hover:text-[#68B7A4] transition-colors dark:text-white"
                   >
                     Searching
-                  </Link>
+                  </div>
                 </CollapsibleContent>
               </Collapsible>
             </div>

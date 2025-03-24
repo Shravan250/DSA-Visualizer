@@ -2,7 +2,6 @@
 
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -17,6 +16,19 @@ import {
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [selectedStrategy, setSelectedStrategy] = useState("line");
+
+  // const strategies: { [key: string]: any } = {
+  //   // line: lineChartStrategy,
+  //   // array: arrayStrategy,
+  //   // linkedList: linkedListStrategy,
+  //   // stack: stackStrategy,
+  //   // queue: queueStrategy,
+  //   // trees: treesStrategy,
+  //   // graph: graphStrategy,
+  //   // sorting: sortingStrategy,
+  //   // searching: searchingStrategy,
+  // };
 
   return (
     <div className="min-h-screen">
@@ -43,23 +55,25 @@ export default function Dashboard() {
             <FastForward size={100} className="text-purple-500" />
           </Button>
         </Card>
+
+        {/* Resize Visualizer Window */}
         <Card
-          className={`min-w-3/4 min-h-screen flex items-center justify-center
-            flex-1
-            transition-all duration-300
-            ${isSidebarOpen ? "mr-80" : "mr-0"}
-          `}
+          className={`min-w-3/4 min-h-screen flex items-center justify-center flex-1 transition-all duration-300 ${
+            isSidebarOpen ? "mr-80" : "mr-0"
+          }`}
         >
-          <h1 className="text-4xl font-bold text-black text-center">
-            DSA Visualizer
-          </h1>
+          DSA Visualizer
         </Card>
+
         <div>
           {/* Sidebar */}
           <div className="absolute top-0 right-0 dark:bg-black">
             <Sidebar
               isOpen={isSidebarOpen}
               toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+              onSelectStrategy={(strategyKey: string) =>
+                setSelectedStrategy(strategyKey)
+              }
             />
           </div>
         </div>
