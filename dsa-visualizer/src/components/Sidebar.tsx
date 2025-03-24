@@ -74,6 +74,7 @@ export default function Sidebar({
             `}
           >
             {/* Data Structures Section */}
+
             <div className="mb-6 dark:bg-black">
               <Collapsible defaultOpen>
                 <CollapsibleTrigger className="flex items-center w-full text-lg font-semibold hover:text-[#68B7A4] transition-colors dark:text-white">

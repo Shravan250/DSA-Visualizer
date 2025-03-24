@@ -13,6 +13,8 @@ import {
   Pause,
   PlayCircle,
 } from "lucide-react";
+import { GeneralVisualizer } from "@/components/generalVisualizer";
+import ArrayVisualizer from "@/components/visualizers/arrayVisualizer";
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -62,7 +64,8 @@ export default function Dashboard() {
             isSidebarOpen ? "mr-80" : "mr-0"
           }`}
         >
-          DSA Visualizer
+          {/* <GeneralVisualizer /> */}
+          <ArrayVisualizer data={[1, 2, 3, 4, 5]} width={1000} height={1000} />
         </Card>
 
         <div>
