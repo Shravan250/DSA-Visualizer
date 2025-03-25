@@ -1,16 +1,18 @@
-// App.tsx
 import React, { useState } from "react";
 import { ArrayItem } from "../components/visualizers/arrayVisualizer";
 import { generateId } from "../lib/utils";
 
-type ArrayOperations = {
+export type ArrayOperations = {
   data: ArrayItem[];
-  handlePush: () => void;
+  handlePush: (newValue: number) => void;
   handlePop: () => void;
-  handleInsert: () => void;
+  handleInsert: (newValue: number, index: number) => void;
+  generateRandomArray: (size: number) => void;
+  handleRemove: (index: number) => void;
+  handleReset: () => void;
 };
 
-function useArrayOperations(initialData: ArrayItem[]): ArrayOperations {
+function useArrayOperations(): ArrayOperations {
   const predefinedData: ArrayItem[] = [
     { id: "1", value: 3 },
     { id: "2", value: 7 },
@@ -19,10 +21,9 @@ function useArrayOperations(initialData: ArrayItem[]): ArrayOperations {
     { id: "5", value: 9 },
   ];
 
-  const [data, setData] = useState<ArrayItem[]>(initialData ?? predefinedData);
+  const [data, setData] = useState<ArrayItem[]>(predefinedData);
 
-  const handlePush = () => {
-    const newValue = Math.floor(Math.random() * 10) + 1;
+  const handlePush = (newValue: number) => {
     setData([...data, { id: generateId(), value: newValue }]);
   };
 
@@ -30,12 +31,42 @@ function useArrayOperations(initialData: ArrayItem[]): ArrayOperations {
     setData(data.slice(0, data.length - 1));
   };
 
-  const handleInsert = () => {
-    const newValue = Math.floor(Math.random() * 10) + 1;
+  const handleInsert = (newValue: number, index: number) => {
     const newData = [...data];
-    newData.splice(2, 0, { id: generateId(), value: newValue });
+    newData.splice(index, 0, { id: generateId(), value: newValue });
     setData(newData);
   };
 
-  return { data, handlePush, handlePop, handleInsert };
+  const generateRandomArray = (size: number) => {
+    const newData = [];
+    for (let i = 0; i < size; i++) {
+      newData.push({
+        id: generateId(),
+        value: Math.floor(Math.random() * 10) + 1,
+      });
+    }
+    setData(newData);
+  };
+
+  const handleRemove = (index: number) => {
+    const newData = [...data];
+    newData.splice(index, 1);
+    setData(newData);
+  };
+
+  const handleReset = () => {
+    setData([]);
+  };
+
+  return {
+    data,
+    handlePush,
+    handlePop,
+    handleInsert,
+    generateRandomArray,
+    handleRemove,
+    handleReset,
+  };
 }
+
+export default useArrayOperations;

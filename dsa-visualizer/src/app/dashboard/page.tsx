@@ -15,22 +15,34 @@ import {
 } from "lucide-react";
 import { GeneralVisualizer } from "@/components/generalVisualizer";
 import ArrayVisualizer from "@/components/visualizers/arrayVisualizer";
+import StackVisualizerOverview from "@/components/sidebarInputs/stackVisualizerOverview";
+import ArrayVisualizerOverview from "@/components/sidebarInputs/arrayVisualizerOverview";
+import LinkedListVisualizerOverview from "@/components/sidebarInputs/linkedListVisualizerOverview";
+import QueueVisualizerOverview from "@/components/sidebarInputs/queueVisualizerOverview";
+import TreesVisualizerOverview from "@/components/sidebarInputs/treesVisualizerOverview";
+import GraphVisualizerOverview from "@/components/sidebarInputs/graphVisualizerOverview";
+import SortingVisualizerOverview from "@/components/sidebarInputs/sortingVisualizerOverview";
+import SearchingVisualizerOverview from "@/components/sidebarInputs/searchingVisualizerOverview";
+import useArrayOperations from "@/hooks/useArrayOperations";
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [selectedStrategy, setSelectedStrategy] = useState("line");
+  const [selectedStrategy, setSelectedStrategy] = useState<string>("");
 
-  // const strategies: { [key: string]: any } = {
-  //   // line: lineChartStrategy,
-  //   // array: arrayStrategy,
-  //   // linkedList: linkedListStrategy,
-  //   // stack: stackStrategy,
-  //   // queue: queueStrategy,
-  //   // trees: treesStrategy,
-  //   // graph: graphStrategy,
-  //   // sorting: sortingStrategy,
-  //   // searching: searchingStrategy,
-  // };
+  // Map each strategy key to its corresponding component.
+  const strategyComponents: { [key: string]: JSX.Element } = {
+    array: <ArrayVisualizerOverview />,
+    linkedList: <LinkedListVisualizerOverview />,
+    stack: <StackVisualizerOverview />,
+    queue: <QueueVisualizerOverview />,
+    trees: <TreesVisualizerOverview />,
+    graph: <GraphVisualizerOverview />,
+    sorting: <SortingVisualizerOverview />,
+    searching: <SearchingVisualizerOverview />,
+  };
+
+  // Get array state and operations from our custom hook.
+  const arrayOps = useArrayOperations();
 
   return (
     <div className="min-h-screen">
@@ -61,11 +73,14 @@ export default function Dashboard() {
         {/* Resize Visualizer Window */}
         <Card
           className={`min-w-3/4 min-h-screen flex items-center justify-center flex-1 transition-all duration-300 ${
-            isSidebarOpen ? "mr-80" : "mr-0"
+            isSidebarOpen ? "mr-100" : "mr-0"
           }`}
         >
           {/* <GeneralVisualizer /> */}
-          <ArrayVisualizer data={[1, 2, 3, 4, 5]} width={1000} height={1000} />
+          <GeneralVisualizer
+            selectedStrategy={selectedStrategy}
+            arrayOps={arrayOps}
+          />
         </Card>
 
         <div>
@@ -77,6 +92,7 @@ export default function Dashboard() {
               onSelectStrategy={(strategyKey: string) =>
                 setSelectedStrategy(strategyKey)
               }
+              arrayOps={arrayOps}
             />
           </div>
         </div>
