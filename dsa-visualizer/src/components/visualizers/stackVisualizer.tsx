@@ -19,14 +19,12 @@ export default function StackVisualizer({ data }: StackVisualizerProps) {
     const itemWidth = 100;
     const itemHeight = 50;
     const itemSpacing = 10;
-    const padding = 50; // Padding around the stack
+    const padding = 50;
 
-    // Calculate total height needed
     const totalHeight = data.length * (itemHeight + itemSpacing) + padding * 2;
-    // Calculate center position for x-axis
     const centerX = Math.max(800, data.length * 130) / 2 - itemWidth / 2;
 
-    // Create SVG container
+    // SVG container
     const svg = d3.select(svgRef.current);
 
     // Add stack base
@@ -38,17 +36,16 @@ export default function StackVisualizer({ data }: StackVisualizerProps) {
       .attr("height", 5)
       .attr("fill", "white");
 
-    // Create stack container
+    // stack container
     const stackContainer = svg
       .append("g")
       .attr("transform", `translate(${centerX}, 0)`);
 
-    // Create stack items with animations
+    // stack items with animations
     const stackItems = stackContainer
       .selectAll("g.stack-item")
       .data(data, (d: any) => d.id)
       .join(
-        // ENTER
         (enter) => {
           const enterSelection = enter
             .append("g")
@@ -148,7 +145,7 @@ export default function StackVisualizer({ data }: StackVisualizerProps) {
       );
   }, [data]);
 
-  // Calculate dynamic dimensions for viewBox
+  // dynamic dimensions for viewBox
   const width = Math.max(800, data.length * 130);
   const height = Math.max(400, data.length * 100);
 
