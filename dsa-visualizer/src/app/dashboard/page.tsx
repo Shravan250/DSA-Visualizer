@@ -14,7 +14,6 @@ import {
   PlayCircle,
 } from "lucide-react";
 import { GeneralVisualizer } from "@/components/generalVisualizer";
-import ArrayVisualizer from "@/components/visualizers/arrayVisualizer";
 import StackVisualizerOverview from "@/components/sidebarInputs/stackVisualizerOverview";
 import ArrayVisualizerOverview from "@/components/sidebarInputs/arrayVisualizerOverview";
 import LinkedListVisualizerOverview from "@/components/sidebarInputs/linkedListVisualizerOverview";
@@ -24,25 +23,28 @@ import GraphVisualizerOverview from "@/components/sidebarInputs/graphVisualizerO
 import SortingVisualizerOverview from "@/components/sidebarInputs/sortingVisualizerOverview";
 import SearchingVisualizerOverview from "@/components/sidebarInputs/searchingVisualizerOverview";
 import useArrayOperations from "@/hooks/useArrayOperations";
-
+import useLinkedListOperations from "@/hooks/useLinkedListOperations";
+import useStackOperations from "@/hooks/useStackOperations";
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [selectedStrategy, setSelectedStrategy] = useState<string>("");
 
+  // Get array state and operations from our custom hook.
+  const arrayOps = useArrayOperations();
+  const linkedListOps = useLinkedListOperations();
+  const stackOps = useStackOperations();
+
   // Map each strategy key to its corresponding component.
   const strategyComponents: { [key: string]: JSX.Element } = {
-    array: <ArrayVisualizerOverview />,
-    linkedList: <LinkedListVisualizerOverview />,
-    stack: <StackVisualizerOverview />,
+    array: <ArrayVisualizerOverview arrayOps={arrayOps} />,
+    linkedList: <LinkedListVisualizerOverview linkedListOps={linkedListOps} />,
+    stack: <StackVisualizerOverview stackOps={stackOps} />,
     queue: <QueueVisualizerOverview />,
     trees: <TreesVisualizerOverview />,
     graph: <GraphVisualizerOverview />,
     sorting: <SortingVisualizerOverview />,
     searching: <SearchingVisualizerOverview />,
   };
-
-  // Get array state and operations from our custom hook.
-  const arrayOps = useArrayOperations();
 
   return (
     <div className="min-h-screen">
@@ -80,6 +82,8 @@ export default function Dashboard() {
           <GeneralVisualizer
             selectedStrategy={selectedStrategy}
             arrayOps={arrayOps}
+            linkedListOps={linkedListOps}
+            stackOps={stackOps}
           />
         </Card>
 
@@ -93,6 +97,8 @@ export default function Dashboard() {
                 setSelectedStrategy(strategyKey)
               }
               arrayOps={arrayOps}
+              linkedListOps={linkedListOps}
+              stackOps={stackOps}
             />
           </div>
         </div>

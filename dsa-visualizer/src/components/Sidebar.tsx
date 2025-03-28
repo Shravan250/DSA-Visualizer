@@ -18,12 +18,15 @@ import GraphVisualizerOverview from "./sidebarInputs/graphVisualizerOverview";
 import SortingVisualizerOverview from "./sidebarInputs/sortingVisualizerOverview";
 import SearchingVisualizerOverview from "./sidebarInputs/searchingVisualizerOverview";
 import { ArrayOperations } from "@/hooks/useArrayOperations";
-
+import { LinkedListOperations } from "@/hooks/useLinkedListOperations";
+import { StackOperations } from "@/hooks/useStackOperations";
 interface SidebarProps {
   isOpen: boolean;
   toggleSidebar: () => void;
   onSelectStrategy: (strategyKey: string) => void;
   arrayOps: ArrayOperations;
+  linkedListOps: LinkedListOperations;
+  stackOps: StackOperations;
 }
 
 export default function Sidebar({
@@ -31,6 +34,8 @@ export default function Sidebar({
   toggleSidebar,
   onSelectStrategy,
   arrayOps,
+  linkedListOps,
+  stackOps,
 }: SidebarProps) {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [mounted, setMounted] = useState<boolean>(false);
@@ -50,8 +55,8 @@ export default function Sidebar({
   // Mapping strategy keys to components.
   const strategyComponents: { [key: string]: JSX.Element } = {
     array: <ArrayVisualizerOverview arrayOps={arrayOps} />,
-    // linkedList: <LinkedListVisualizerOverview {...linkedListOps} />,
-    // stack: <StackVisualizerOverview {...stackOps} />,
+    linkedList: <LinkedListVisualizerOverview linkedListOps={linkedListOps} />,
+    stack: <StackVisualizerOverview stackOps={stackOps} />,
     // queue: <QueueVisualizerOverview {...queueOps} />,
     // trees: <TreesVisualizerOverview {...treesOps} />,
     // graph: <GraphVisualizerOverview {...graphOps} />,

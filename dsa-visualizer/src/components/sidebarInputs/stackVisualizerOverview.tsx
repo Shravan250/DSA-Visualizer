@@ -3,37 +3,33 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { StackOperations } from "@/hooks/useStackOperations";
 
-export default function StackVisualizerOverview() {
+interface StackVisualizerOverviewProps {
+  stackOps: StackOperations;
+}
+
+export default function StackVisualizerOverview({
+  stackOps,
+}: StackVisualizerOverviewProps) {
   const [stack, setStack] = useState<number[]>([]);
   const [newValue, setNewValue] = useState<string>("");
   const [peekValue, setPeekValue] = useState<number | null>(null);
 
   const handlePush = () => {
-    const value = parseInt(newValue);
-    if (!isNaN(value)) {
-      setStack([...stack, value]);
-      setNewValue("");
-    }
+    stackOps.push(parseInt(newValue));
   };
 
   const handlePop = () => {
-    if (stack.length > 0) {
-      setStack(stack.slice(0, -1));
-    }
+    stackOps.pop();
   };
 
   const handlePeek = () => {
-    if (stack.length > 0) {
-      setPeekValue(stack[stack.length - 1]);
-      setTimeout(() => setPeekValue(null), 2000); // Clear peek value after 2 seconds
-    }
+    stackOps.peek();
   };
 
   const handleReset = () => {
-    setStack([]);
-    setNewValue("");
-    setPeekValue(null);
+    stackOps.reset();
   };
 
   return (
@@ -52,7 +48,7 @@ export default function StackVisualizerOverview() {
             />
             <Button onClick={handlePush}>Push</Button>
           </div>
-          <Button onClick={handlePop} variant="outline" className="w-full">
+          <Button onClick={handlePop} variant="destructive" className="w-full">
             Pop
           </Button>
         </div>
@@ -65,29 +61,15 @@ export default function StackVisualizerOverview() {
 
         <Separator />
 
-        <Button onClick={handleReset} variant="outline" className="w-full">
+        <Button onClick={handleReset} variant="destructive" className="w-full">
           Reset Stack
         </Button>
 
         <div className="mt-4 p-2 bg-muted rounded-md">
-          <p className="text-sm font-medium">Current Stack:</p>
-          <div className="flex flex-col-reverse gap-1">
-            {stack.map((value, index) => (
-              <div
-                key={index}
-                className={`p-2 rounded-md ${
-                  index === stack.length - 1
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary"
-                }`}
-              >
-                {value}
-              </div>
-            ))}
-            {stack.length === 0 && (
-              <div className="text-sm text-muted-foreground">Empty Stack</div>
-            )}
-          </div>
+          {stack.length === 0 && (
+            <div className="text-sm text-muted-foreground">Empty Stack</div>
+          )}
+
           {peekValue !== null && (
             <p className="text-sm text-primary mt-2">
               Peeked value: {peekValue}
