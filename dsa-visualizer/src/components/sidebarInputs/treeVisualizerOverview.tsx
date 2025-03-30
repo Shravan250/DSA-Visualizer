@@ -5,50 +5,49 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { TreeOperations } from "@/hooks/useTreeOperations";
 
-export default function TreesVisualizerOverview({
+export default function TreeVisualizerOverview({
   treeOps,
 }: {
   treeOps: TreeOperations;
 }) {
-  const [newValue, setNewValue] = useState<string>("");
-  const [traversalType, setTraversalType] = useState<string>("");
-  const [traversalResult, setTraversalResult] = useState<number[]>([]);
+  const [value, setValue] = useState<string>("");
+  const [traversalResult, setTraversalResult] = useState<{
+    type: string;
+    result: number[];
+  } | null>(null);
 
   const handleInsert = () => {
-    const value = parseInt(newValue);
-    if (!isNaN(value)) {
-      treeOps.insert(value);
-      setNewValue("");
+    const num = parseInt(value);
+    if (!isNaN(num)) {
+      treeOps.insert(num);
+      setValue("");
     }
   };
 
   const handleRemove = () => {
-    const value = parseInt(newValue);
-    if (!isNaN(value)) {
-      treeOps.remove(value);
-      setNewValue("");
+    const num = parseInt(value);
+    if (!isNaN(num)) {
+      treeOps.remove(num);
+      setValue("");
     }
   };
 
   const handleSearch = () => {
-    const value = parseInt(newValue);
-    if (!isNaN(value)) {
-      treeOps.search(value);
-      setNewValue("");
+    const num = parseInt(value);
+    if (!isNaN(num)) {
+      treeOps.search(num);
+      setValue("");
     }
   };
 
   const handleTraversal = async (
     type: string,
-    operation: () => Promise<number[]>
+    operation: () => Promise<number[] | undefined>
   ) => {
     if (treeOps.isOperationInProgress) return;
-    try {
-      const result = await operation();
-      setTraversalType(type);
-      setTraversalResult(result);
-    } catch (error) {
-      console.error(`${type} traversal failed:`, error);
+    const result = await operation();
+    if (result) {
+      setTraversalResult({ type, result });
     }
   };
 
@@ -63,8 +62,8 @@ export default function TreesVisualizerOverview({
             <Input
               type="number"
               placeholder="Enter value"
-              value={newValue}
-              onChange={(e) => setNewValue(e.target.value)}
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
             />
             <Button
               onClick={handleInsert}
@@ -139,13 +138,13 @@ export default function TreesVisualizerOverview({
           </div>
 
           {/* Traversal Result Display */}
-          {traversalResult.length > 0 && (
+          {traversalResult && (
             <div className="mt-4 p-3 bg-secondary/20 rounded-md">
               <p className="text-sm font-medium mb-1">
-                {traversalType} Traversal Result:
+                {traversalResult.type} Traversal Result:
               </p>
               <p className="text-sm font-mono">
-                [{traversalResult.join(", ")}]
+                [{traversalResult.result.join(", ")}]
               </p>
             </div>
           )}
@@ -156,8 +155,7 @@ export default function TreesVisualizerOverview({
         <Button
           onClick={() => {
             treeOps.reset();
-            setTraversalResult([]);
-            setTraversalType("");
+            setTraversalResult(null);
           }}
           variant="destructive"
           className="w-full"

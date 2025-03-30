@@ -3,37 +3,30 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { QueueOperations } from "@/hooks/useQueueOperations";
 
-export default function QueueVisualizerOverview() {
-  const [queue, setQueue] = useState<number[]>([]);
+export default function QueueVisualizerOverview({
+  queueOps,
+}: {
+  queueOps: QueueOperations;
+}) {
   const [newValue, setNewValue] = useState<string>("");
-  const [peekValue, setPeekValue] = useState<number | null>(null);
 
   const handleEnqueue = () => {
-    const value = parseInt(newValue);
-    if (!isNaN(value)) {
-      setQueue([...queue, value]);
-      setNewValue("");
-    }
+    queueOps.enqueue(parseInt(newValue));
+    setNewValue("");
   };
 
   const handleDequeue = () => {
-    if (queue.length > 0) {
-      setQueue(queue.slice(1));
-    }
+    queueOps.dequeue();
   };
 
   const handlePeek = () => {
-    if (queue.length > 0) {
-      setPeekValue(queue[0]);
-      setTimeout(() => setPeekValue(null), 2000); // Clear peek value after 2 seconds
-    }
+    queueOps.peek();
   };
 
   const handleReset = () => {
-    setQueue([]);
-    setNewValue("");
-    setPeekValue(null);
+    queueOps.reset();
   };
 
   return (
@@ -52,7 +45,11 @@ export default function QueueVisualizerOverview() {
             />
             <Button onClick={handleEnqueue}>Enqueue</Button>
           </div>
-          <Button onClick={handleDequeue} variant="outline" className="w-full">
+          <Button
+            onClick={handleDequeue}
+            variant="destructive"
+            className="w-full"
+          >
             Dequeue
           </Button>
         </div>
@@ -65,35 +62,9 @@ export default function QueueVisualizerOverview() {
 
         <Separator />
 
-        <Button onClick={handleReset} variant="outline" className="w-full">
+        <Button onClick={handleReset} variant="destructive" className="w-full">
           Reset Queue
         </Button>
-
-        <div className="mt-4 p-2 bg-muted rounded-md">
-          <p className="text-sm font-medium">Current Queue:</p>
-          <div className="flex gap-1">
-            {queue.map((value, index) => (
-              <div
-                key={index}
-                className={`p-2 rounded-md ${
-                  index === 0
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary"
-                }`}
-              >
-                {value}
-              </div>
-            ))}
-            {queue.length === 0 && (
-              <div className="text-sm text-muted-foreground">Empty Queue</div>
-            )}
-          </div>
-          {peekValue !== null && (
-            <p className="text-sm text-primary mt-2">
-              Peeked value: {peekValue}
-            </p>
-          )}
-        </div>
       </CardContent>
     </Card>
   );

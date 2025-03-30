@@ -25,6 +25,8 @@ import SearchingVisualizerOverview from "@/components/sidebarInputs/searchingVis
 import useArrayOperations from "@/hooks/useArrayOperations";
 import useLinkedListOperations from "@/hooks/useLinkedListOperations";
 import useStackOperations from "@/hooks/useStackOperations";
+import useQueueOperations from "@/hooks/useQueueOperations";
+import useTreeOperations from "@/hooks/useTreeOperations";
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [selectedStrategy, setSelectedStrategy] = useState<string>("");
@@ -33,14 +35,15 @@ export default function Dashboard() {
   const arrayOps = useArrayOperations();
   const linkedListOps = useLinkedListOperations();
   const stackOps = useStackOperations();
-
+  const queueOps = useQueueOperations();
+  const treeOps = useTreeOperations();
   // Map each strategy key to its corresponding component.
   const strategyComponents: { [key: string]: JSX.Element } = {
     array: <ArrayVisualizerOverview arrayOps={arrayOps} />,
     linkedList: <LinkedListVisualizerOverview linkedListOps={linkedListOps} />,
     stack: <StackVisualizerOverview stackOps={stackOps} />,
-    queue: <QueueVisualizerOverview />,
-    trees: <TreesVisualizerOverview />,
+    queue: <QueueVisualizerOverview queueOps={queueOps} />,
+    trees: <TreesVisualizerOverview treeOps={treeOps} />,
     graph: <GraphVisualizerOverview />,
     sorting: <SortingVisualizerOverview />,
     searching: <SearchingVisualizerOverview />,
@@ -84,6 +87,8 @@ export default function Dashboard() {
             arrayOps={arrayOps}
             linkedListOps={linkedListOps}
             stackOps={stackOps}
+            queueOps={queueOps}
+            treeOps={treeOps}
           />
         </Card>
 
@@ -99,6 +104,8 @@ export default function Dashboard() {
               arrayOps={arrayOps}
               linkedListOps={linkedListOps}
               stackOps={stackOps}
+              queueOps={queueOps}
+              treeOps={treeOps}
             />
           </div>
         </div>

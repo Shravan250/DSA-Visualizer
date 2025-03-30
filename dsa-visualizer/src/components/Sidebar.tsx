@@ -20,6 +20,8 @@ import SearchingVisualizerOverview from "./sidebarInputs/searchingVisualizerOver
 import { ArrayOperations } from "@/hooks/useArrayOperations";
 import { LinkedListOperations } from "@/hooks/useLinkedListOperations";
 import { StackOperations } from "@/hooks/useStackOperations";
+import { QueueOperations } from "@/hooks/useQueueOperations";
+import { TreeOperations } from "@/hooks/useTreeOperations";
 interface SidebarProps {
   isOpen: boolean;
   toggleSidebar: () => void;
@@ -27,6 +29,8 @@ interface SidebarProps {
   arrayOps: ArrayOperations;
   linkedListOps: LinkedListOperations;
   stackOps: StackOperations;
+  queueOps: QueueOperations;
+  treeOps: TreeOperations;
 }
 
 export default function Sidebar({
@@ -36,6 +40,8 @@ export default function Sidebar({
   arrayOps,
   linkedListOps,
   stackOps,
+  queueOps,
+  treeOps,
 }: SidebarProps) {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [mounted, setMounted] = useState<boolean>(false);
@@ -57,8 +63,8 @@ export default function Sidebar({
     array: <ArrayVisualizerOverview arrayOps={arrayOps} />,
     linkedList: <LinkedListVisualizerOverview linkedListOps={linkedListOps} />,
     stack: <StackVisualizerOverview stackOps={stackOps} />,
-    // queue: <QueueVisualizerOverview {...queueOps} />,
-    // trees: <TreesVisualizerOverview {...treesOps} />,
+    queue: <QueueVisualizerOverview queueOps={queueOps} />,
+    trees: <TreesVisualizerOverview treeOps={treeOps} />,
     // graph: <GraphVisualizerOverview {...graphOps} />,
     // sorting: <SortingVisualizerOverview {...sortingOps} />,
     // searching: <SearchingVisualizerOverview {...searchingOps} />,
