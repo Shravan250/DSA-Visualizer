@@ -1,16 +1,15 @@
 // GeneralVisualizer.tsx
 import React from "react";
 import ArrayVisualizer from "./visualizers/arrayVisualizer";
-import type { ArrayOperations } from "@/hooks/useArrayOperations";
 import LinkedListVisualizer from "./visualizers/linkedListVisualizer";
-import { LinkedListOperations } from "@/hooks/useLinkedListOperations";
-import TestComponent from "./testComponent";
 import StackVisualizer from "./visualizers/stackVisualizer";
-import { StackOperations } from "@/hooks/useStackOperations";
-import { QueueOperations } from "@/hooks/useQueueOperations";
 import QueueVisualizer from "./visualizers/queueVisualizer";
 import TreesVisualizer from "./visualizers/treeVisualizer";
 import { TreeOperations } from "@/hooks/useTreeOperations";
+import { LinkedListOperations } from "@/lib/types/linkedList";
+import { ArrayOperations } from "@/lib/types/array";
+import { StackOperations } from "@/lib/types/stack";
+import { QueueOperations } from "@/lib/types/queue";
 interface GeneralVisualizerProps {
   selectedStrategy: string;
   arrayOps: ArrayOperations;
@@ -53,7 +52,6 @@ export function GeneralVisualizer({
           Please select a data structure or algorithm from the sidebar.
         </div>
       )}
-      {/* <TestComponent /> */}
     </div>
   );
 }

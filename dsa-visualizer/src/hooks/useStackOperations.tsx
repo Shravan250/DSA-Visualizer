@@ -1,21 +1,7 @@
+import { StackOperations } from "@/lib/types/stack";
+import { StackItem } from "@/lib/types/stack";
 import { generateId } from "@/lib/utils";
 import { useState } from "react";
-
-export interface StackItem {
-  id: string;
-  value: number;
-  state: "default" | "inserting" | "highlighted" | "deleting";
-}
-
-export type StackOperations = {
-  data: StackItem[];
-  push: (value: number) => void;
-  pop: () => void;
-  peek: () => void;
-  isEmpty: () => boolean;
-  size: () => number;
-  reset: () => void;
-};
 
 const useStackOperations = (): StackOperations => {
   const predefinedData: StackItem[] = [

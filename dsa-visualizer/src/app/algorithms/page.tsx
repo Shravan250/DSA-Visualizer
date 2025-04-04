@@ -40,6 +40,24 @@ export default function AlgorithmsPage() {
             title="Selection Sort"
             description="The selection sort algorithm sorts an array by repeatedly finding the minimum element from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array."
           />
+
+          <SortingVisualizer
+            algorithm="quick"
+            title="Quick Sort"
+            description="Quick Sort is a divide-and-conquer algorithm that picks a 'pivot' element and partitions the array around it. Elements smaller than the pivot go to the left, larger to the right. This process is recursively applied to the sub-arrays."
+          />
+
+          <SortingVisualizer
+            algorithm="merge"
+            title="Merge Sort"
+            description="Merge Sort is a divide-and-conquer algorithm that divides the input array into two halves, recursively sorts them, and then merges the sorted halves. It's known for its stable sorting and guaranteed O(n log n) time complexity."
+          />
+
+          <SortingVisualizer
+            algorithm="heap"
+            title="Heap Sort"
+            description="Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure. It divides its input into a sorted and an unsorted region, and iteratively shrinks the unsorted region by extracting the largest element and moving it to the sorted region."
+          />
         </div>
       </main>
       <Footer />

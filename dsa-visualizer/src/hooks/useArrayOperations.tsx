@@ -1,16 +1,7 @@
 import React, { useState } from "react";
 import { ArrayItem } from "../components/visualizers/arrayVisualizer";
 import { generateId } from "../lib/utils";
-
-export type ArrayOperations = {
-  data: ArrayItem[];
-  handlePush: (newValue: number) => void;
-  handlePop: () => void;
-  handleInsert: (newValue: number, index: number) => void;
-  generateRandomArray: (size: number) => void;
-  handleRemove: (index: number) => void;
-  handleReset: () => void;
-};
+import { ArrayOperations } from "@/lib/types/array";
 
 function useArrayOperations(): ArrayOperations {
   const predefinedData: ArrayItem[] = [

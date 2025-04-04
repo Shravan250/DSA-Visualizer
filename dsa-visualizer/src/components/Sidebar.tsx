@@ -17,11 +17,11 @@ import TreesVisualizerOverview from "./sidebarInputs/treesVisualizerOverview";
 import GraphVisualizerOverview from "./sidebarInputs/graphVisualizerOverview";
 import SortingVisualizerOverview from "./sidebarInputs/sortingVisualizerOverview";
 import SearchingVisualizerOverview from "./sidebarInputs/searchingVisualizerOverview";
-import { ArrayOperations } from "@/hooks/useArrayOperations";
-import { LinkedListOperations } from "@/hooks/useLinkedListOperations";
-import { StackOperations } from "@/hooks/useStackOperations";
-import { QueueOperations } from "@/hooks/useQueueOperations";
 import { TreeOperations } from "@/hooks/useTreeOperations";
+import { QueueOperations } from "@/lib/types/queue";
+import { ArrayOperations } from "@/lib/types/array";
+import { LinkedListOperations } from "@/lib/types/linkedList";
+import { StackOperations } from "@/lib/types/stack";
 interface SidebarProps {
   isOpen: boolean;
   toggleSidebar: () => void;
@@ -66,8 +66,8 @@ export default function Sidebar({
     queue: <QueueVisualizerOverview queueOps={queueOps} />,
     trees: <TreesVisualizerOverview treeOps={treeOps} />,
     // graph: <GraphVisualizerOverview {...graphOps} />,
-    // sorting: <SortingVisualizerOverview {...sortingOps} />,
-    // searching: <SearchingVisualizerOverview {...searchingOps} />,
+    sorting: <SortingVisualizerOverview />,
+    searching: <SearchingVisualizerOverview />,
   };
 
   // Handler when a sub-element is clicked.
