@@ -1,11 +1,7 @@
 // ArrayVisualizer.tsx
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-export type ArrayItem = {
-  id: string;
-  value: number;
-};
+import { ArrayItem } from "@/lib/types/array";
 
 type ArrayVisualizerProps = {
   data: ArrayItem[];

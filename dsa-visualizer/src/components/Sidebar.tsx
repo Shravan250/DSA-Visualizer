@@ -1,27 +1,24 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { ChevronDown, ChevronLeft, ChevronRight, Menu } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import ArrayVisualizerOverview from "./sidebarInputs/arrayVisualizerOverview";
-import LinkedListVisualizerOverview from "./sidebarInputs/linkedListVisualizerOverview";
-import StackVisualizerOverview from "./sidebarInputs/stackVisualizerOverview";
-import QueueVisualizerOverview from "./sidebarInputs/queueVisualizerOverview";
-import TreesVisualizerOverview from "./sidebarInputs/treesVisualizerOverview";
-import GraphVisualizerOverview from "./sidebarInputs/graphVisualizerOverview";
-import SortingVisualizerOverview from "./sidebarInputs/sortingVisualizerOverview";
-import SearchingVisualizerOverview from "./sidebarInputs/searchingVisualizerOverview";
 import { TreeOperations } from "@/hooks/useTreeOperations";
-import { QueueOperations } from "@/lib/types/queue";
 import { ArrayOperations } from "@/lib/types/array";
 import { LinkedListOperations } from "@/lib/types/linkedList";
+import { QueueOperations } from "@/lib/types/queue";
 import { StackOperations } from "@/lib/types/stack";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown, ChevronLeft, ChevronRight, Menu } from "lucide-react";
+import { useEffect, useState } from "react";
+import ArrayVisualizerOverview from "./sidebarInputs/arrayVisualizerOverview";
+import LinkedListVisualizerOverview from "./sidebarInputs/linkedListVisualizerOverview";
+import QueueVisualizerOverview from "./sidebarInputs/queueVisualizerOverview";
+import SearchingVisualizerOverview from "./sidebarInputs/searchingVisualizerOverview";
+import SortingVisualizerOverview from "./sidebarInputs/sortingVisualizerOverview";
+import StackVisualizerOverview from "./sidebarInputs/stackVisualizerOverview";
+import TreesVisualizerOverview from "./sidebarInputs/treesVisualizerOverview";
 interface SidebarProps {
   isOpen: boolean;
   toggleSidebar: () => void;

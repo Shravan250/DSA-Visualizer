@@ -1,3 +1,8 @@
+export type ArrayItem = {
+  id: string;
+  value: number;
+};
+
 export type ArrayOperations = {
   data: ArrayItem[];
   handlePush: (newValue: number) => void;

@@ -1,9 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SearchMethod } from "@/lib/types/searching";
+import { useEffect, useState } from "react";
 import { SearchControls } from "../controls/SearchControls";
-import { SearchMethod, SearchResult } from "@/lib/types/searching";
-import { useSearchOperations } from "@/hooks/useSearchOperations";
-import SearchVisualizer from "../visualizers/searchVisualizer";
 
 export default function SearchingVisualizerOverview() {
   const [searchValue, setSearchValue] = useState<string>("");

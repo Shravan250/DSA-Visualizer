@@ -1,20 +1,19 @@
 "use client";
 
-import React, { useState, useCallback, useRef, useEffect } from "react";
-import * as d3 from "d3";
 import { Button } from "@/components/ui/button";
 import {
   Card,
+  CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Progress } from "@/components/ui/progress";
+import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
-import { PlayCircle, PauseCircle, RotateCcw } from "lucide-react";
+import * as d3 from "d3";
+import { PauseCircle, PlayCircle, RotateCcw } from "lucide-react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 type Algorithm =
   | "bubble"

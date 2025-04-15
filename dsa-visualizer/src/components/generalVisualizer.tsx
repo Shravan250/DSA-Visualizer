@@ -1,15 +1,14 @@
 // GeneralVisualizer.tsx
-import React from "react";
+import { TreeOperations } from "@/hooks/useTreeOperations";
+import { ArrayOperations } from "@/lib/types/array";
+import { LinkedListOperations } from "@/lib/types/linkedList";
+import { QueueOperations } from "@/lib/types/queue";
+import { StackOperations } from "@/lib/types/stack";
 import ArrayVisualizer from "./visualizers/arrayVisualizer";
 import LinkedListVisualizer from "./visualizers/linkedListVisualizer";
-import StackVisualizer from "./visualizers/stackVisualizer";
 import QueueVisualizer from "./visualizers/queueVisualizer";
+import StackVisualizer from "./visualizers/stackVisualizer";
 import TreesVisualizer from "./visualizers/treeVisualizer";
-import { TreeOperations } from "@/hooks/useTreeOperations";
-import { LinkedListOperations } from "@/lib/types/linkedList";
-import { ArrayOperations } from "@/lib/types/array";
-import { StackOperations } from "@/lib/types/stack";
-import { QueueOperations } from "@/lib/types/queue";
 interface GeneralVisualizerProps {
   selectedStrategy: string;
   arrayOps: ArrayOperations;

@@ -1,8 +1,7 @@
-import { useState, useCallback, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { SortControls } from "../controls/SortControls";
 import { SortMethod } from "@/lib/types/sorting";
-import { useSortOperations } from "@/hooks/useSortOperations";
+import { useState } from "react";
+import { SortControls } from "../controls/SortControls";
 
 export default function SortingVisualizerOverview() {
   const [selectedMethod, setSelectedMethod] = useState<SortMethod>("bubble");

@@ -1,5 +1,5 @@
+import { TreeNode } from "./types/tree";
 import { generateId } from "./utils";
-import { TreeNode } from "@/hooks/useTreeOperations";
 
 export const buildBalancedBST = (
   sortedValues: number[],

@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import ArrayVisualizer, { ArrayItem } from "../visualizers/arrayVisualizer";
 import { ArrayOperations } from "@/hooks/useArrayOperations";
+import { useState } from "react";
 
 interface ArrayVisualizerOverviewProps {
   arrayOps: ArrayOperations;
