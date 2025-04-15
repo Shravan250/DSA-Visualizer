@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ArrayItem } from "../components/visualizers/arrayVisualizer";
 import { generateId } from "../lib/utils";
 import { ArrayOperations } from "@/lib/types/array";

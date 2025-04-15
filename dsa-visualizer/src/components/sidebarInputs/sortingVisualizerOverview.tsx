@@ -7,7 +7,7 @@ export default function SortingVisualizerOverview() {
   const [selectedMethod, setSelectedMethod] = useState<SortMethod>("bubble");
   const [arraySize, setArraySize] = useState<string>("10");
   const [stepDelay, setStepDelay] = useState<number>(500);
-  const [refreshVisualizer, setRefreshVisualizer] = useState<boolean>(false);
+  // const [refreshVisualizer, setRefreshVisualizer] = useState<boolean>(false);
 
   // const {
   //   array,

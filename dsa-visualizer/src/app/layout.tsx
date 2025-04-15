@@ -1,13 +1,7 @@
-import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Inter,
-  Raleway,
-  Young_Serif,
-} from "next/font/google";
-import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import type { Metadata } from "next";
+import { Inter, Raleway, Young_Serif } from "next/font/google";
+import "./globals.css";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -30,7 +24,7 @@ const youngSerif = Young_Serif({
 //   subsets: ["latin"],
 // });
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "AlgoArt",

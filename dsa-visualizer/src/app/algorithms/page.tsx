@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
 import SortingVisualizer from "@/components/SortingVisualizer";
-import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import { Separator } from "@/components/ui/separator";
 
 export default function AlgorithmsPage() {

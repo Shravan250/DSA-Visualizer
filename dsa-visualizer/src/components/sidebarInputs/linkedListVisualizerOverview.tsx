@@ -5,11 +5,6 @@ import { Separator } from "@/components/ui/separator";
 import { LinkedListOperations } from "@/hooks/useLinkedListOperations";
 import { useState } from "react";
 
-interface Node {
-  value: number;
-  next: Node | null;
-}
-
 export default function LinkedListVisualizerOverview({
   linkedListOps,
 }: {

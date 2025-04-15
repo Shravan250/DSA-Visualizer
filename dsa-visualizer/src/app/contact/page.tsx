@@ -1,13 +1,12 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import Link from "next/link";
+import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 
 export default function Contact() {
   return (

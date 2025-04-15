@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import { QueueItem } from "@/hooks/useQueueOperations";
 import * as d3 from "d3";
+import { QueueItem } from "@/lib/types/queue";
 
 interface QueueVisualizerProps {
   data: QueueItem[];

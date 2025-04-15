@@ -21,8 +21,8 @@ export default function Home() {
               className="text-gray-400 text-2xl mb-12"
               style={{ fontFamily: "Young Serif" }}
             >
-              "Transforming complex data structures into captivating visual
-              journeys—experience DSA like never before!"
+              &quot;Transforming complex data structures into captivating visual
+              journeys—experience DSA like never before!&quot;
             </p>
             <div className="flex justify-center gap-4">
               <Link href="/dashboard">
@@ -124,9 +124,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-8 text-white">
             <div className="md:w-2/3">
               <blockquote className="text-xl mb-4">
-                "I have learnt so much using this website! I recommend it to
-                everyone that starts their journey with algorithms and web
-                development!"
+                &quot;I have learnt so much using this website! I recommend it
+                to everyone that starts their journey with algorithms and web
+                development!&quot;
               </blockquote>
               <div>
                 <p className="font-semibold">

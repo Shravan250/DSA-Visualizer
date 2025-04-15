@@ -1,9 +1,9 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import { Button } from "@/components/ui/button"; // Adjust the import if your Button component is located elsewhere
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button"; // Adjust the import if your Button component is located elsewhere
 
 export default function About() {
   return (

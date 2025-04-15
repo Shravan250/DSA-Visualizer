@@ -12,9 +12,9 @@ interface StackVisualizerOverviewProps {
 export default function StackVisualizerOverview({
   stackOps,
 }: StackVisualizerOverviewProps) {
-  const [stack, setStack] = useState<number[]>([]);
+  // const [stack, setStack] = useState<number[]>([]);
   const [newValue, setNewValue] = useState<string>("");
-  const [peekValue, setPeekValue] = useState<number | null>(null);
+  // const [peekValue, setPeekValue] = useState<number | null>(null);
 
   const handlePush = () => {
     stackOps.push(parseInt(newValue));
@@ -65,7 +65,7 @@ export default function StackVisualizerOverview({
           Reset Stack
         </Button>
 
-        <div className="mt-4 p-2 bg-muted rounded-md">
+        {/* <div className="mt-4 p-2 bg-muted rounded-md">
           {stack.length === 0 && (
             <div className="text-sm text-muted-foreground">Empty Stack</div>
           )}
@@ -75,7 +75,7 @@ export default function StackVisualizerOverview({
               Peeked value: {peekValue}
             </p>
           )}
-        </div>
+        </div> */}
       </CardContent>
     </Card>
   );

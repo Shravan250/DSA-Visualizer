@@ -27,8 +27,8 @@ export default function Error(error: ErrorProps) {
         Page not found...
       </h1>
       <p className="w-full max-w-md md:w-1/2 text-center text-sm md:text-base text-gray-500">
-        Something went wrong. It's look that your requested could not be found.
-        It's look like the link is broken or the page is removed.
+        Something went wrong. It&apos;s look that your requested could not be
+        found. It&apos;s look like the link is broken or the page is removed.
       </p>
       <Link href="/">
         <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md transition-colors">

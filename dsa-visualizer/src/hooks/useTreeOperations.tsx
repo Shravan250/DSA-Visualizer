@@ -15,11 +15,11 @@ export default function useTreeOperations() {
   const createId = () => generateId();
 
   // timing constants
-  const ANIMATION_SPEED = {
-    FAST: 300,
-    NORMAL: 500,
-    SLOW: 800,
-  };
+  // const ANIMATION_SPEED = {
+  //   FAST: 300,
+  //   NORMAL: 500,
+  //   SLOW: 800,
+  // };
 
   // Helper to flatten tree for visualization
   const flattenTree = (
@@ -460,6 +460,7 @@ export default function useTreeOperations() {
   };
 
   //load default tree
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadDefaultTree();
   }, []);

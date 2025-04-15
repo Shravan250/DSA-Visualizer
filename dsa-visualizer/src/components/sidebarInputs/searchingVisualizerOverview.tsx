@@ -8,7 +8,7 @@ export default function SearchingVisualizerOverview() {
   const [selectedMethod, setSelectedMethod] = useState<SearchMethod>("linear");
   const [arraySize, setArraySize] = useState<string>("10");
   const [stepDelay, setStepDelay] = useState<number>(500);
-  const [refreshVisualizer, setRefreshVisualizer] = useState<boolean>(false);
+  // const [refreshVisualizer, setRefreshVisualizer] = useState<boolean>(false);
 
   // const {
   //   array,

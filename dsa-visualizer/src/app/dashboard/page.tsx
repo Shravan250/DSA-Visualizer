@@ -1,11 +1,24 @@
 "use client";
 
-import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { GeneralVisualizer } from "@/components/generalVisualizer";
+import Navbar from "@/components/navbar";
 import Sidebar from "@/components/Sidebar";
-import { useState } from "react";
+import ArrayVisualizerOverview from "@/components/sidebarInputs/arrayVisualizerOverview";
+import GraphVisualizerOverview from "@/components/sidebarInputs/graphVisualizerOverview";
+import LinkedListVisualizerOverview from "@/components/sidebarInputs/linkedListVisualizerOverview";
+import QueueVisualizerOverview from "@/components/sidebarInputs/queueVisualizerOverview";
+import SearchingVisualizerOverview from "@/components/sidebarInputs/searchingVisualizerOverview";
+import SortingVisualizerOverview from "@/components/sidebarInputs/sortingVisualizerOverview";
+import StackVisualizerOverview from "@/components/sidebarInputs/stackVisualizerOverview";
+import TreesVisualizerOverview from "@/components/sidebarInputs/treesVisualizerOverview";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import useArrayOperations from "@/hooks/useArrayOperations";
+import useLinkedListOperations from "@/hooks/useLinkedListOperations";
+import useQueueOperations from "@/hooks/useQueueOperations";
+import useStackOperations from "@/hooks/useStackOperations";
+import useTreeOperations from "@/hooks/useTreeOperations";
 import {
   ArrowDownToDot,
   CircleStop,
@@ -13,20 +26,7 @@ import {
   Pause,
   PlayCircle,
 } from "lucide-react";
-import { GeneralVisualizer } from "@/components/generalVisualizer";
-import StackVisualizerOverview from "@/components/sidebarInputs/stackVisualizerOverview";
-import ArrayVisualizerOverview from "@/components/sidebarInputs/arrayVisualizerOverview";
-import LinkedListVisualizerOverview from "@/components/sidebarInputs/linkedListVisualizerOverview";
-import QueueVisualizerOverview from "@/components/sidebarInputs/queueVisualizerOverview";
-import TreesVisualizerOverview from "@/components/sidebarInputs/treesVisualizerOverview";
-import GraphVisualizerOverview from "@/components/sidebarInputs/graphVisualizerOverview";
-import SortingVisualizerOverview from "@/components/sidebarInputs/sortingVisualizerOverview";
-import SearchingVisualizerOverview from "@/components/sidebarInputs/searchingVisualizerOverview";
-import useArrayOperations from "@/hooks/useArrayOperations";
-import useLinkedListOperations from "@/hooks/useLinkedListOperations";
-import useStackOperations from "@/hooks/useStackOperations";
-import useQueueOperations from "@/hooks/useQueueOperations";
-import useTreeOperations from "@/hooks/useTreeOperations";
+import { useState } from "react";
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [selectedStrategy, setSelectedStrategy] = useState<string>("");

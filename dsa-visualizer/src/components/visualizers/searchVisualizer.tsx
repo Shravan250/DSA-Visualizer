@@ -95,7 +95,7 @@ export default function SearchVisualizer({
         return "white"; // Default
       })
       .attr("stroke-width", 1)
-      .on("mouseover", (event, d, i) => {
+      .on("mouseover", (event, d) => {
         const index = array.indexOf(d);
         setHoveredIndex(index);
       })
