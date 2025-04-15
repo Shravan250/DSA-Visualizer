@@ -30,7 +30,7 @@ export default function Dashboard() {
   const queueOps = useQueueOperations();
   const treeOps = useTreeOperations();
   // Map each strategy key to its corresponding component.
-  // const strategyComponents: { [key: string]: JSX.Element } = {
+  // const strategyComponents: { [key: string] } = {
   //   array: <ArrayVisualizerOverview arrayOps={arrayOps} />,
   //   linkedList: <LinkedListVisualizerOverview linkedListOps={linkedListOps} />,
   //   stack: <StackVisualizerOverview stackOps={stackOps} />,
