@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
-import { Inter, Raleway, Young_Serif } from "next/font/google";
+import { Raleway, Young_Serif } from "next/font/google";
 import "./globals.css";
 
 // const geistSans = Geist({

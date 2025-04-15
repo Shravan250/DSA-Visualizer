@@ -96,8 +96,10 @@ export default function QueueVisualizer({ data }: QueueVisualizerProps) {
     }
 
     // Create cells
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const cells = arrayContainer
       .selectAll(".cell")
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .data(data, (d: any) => d.id)
       .join(
         // ENTER

@@ -42,8 +42,10 @@ export default function StackVisualizer({ data }: StackVisualizerProps) {
       .attr("transform", `translate(${centerX}, 0)`);
 
     // stack items with animations
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const stackItems = stackContainer
       .selectAll("g.stack-item")
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .data(data, (d: any) => d.id)
       .join(
         (enter) => {

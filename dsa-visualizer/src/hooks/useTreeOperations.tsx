@@ -430,6 +430,7 @@ export default function useTreeOperations() {
   };
 
   // Update the state management to be more efficient
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const updateTreeState = (
     node: TreeNode | null,
     state: TreeNode["state"],

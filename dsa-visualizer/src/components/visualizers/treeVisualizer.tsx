@@ -76,6 +76,7 @@ export default function TreeVisualizer({ data }: TreeVisualizerProps) {
     treeLayout(root);
 
     // Create links first (so they appear behind nodes)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const links = treeContainer
       .selectAll(".link")
       .data(root.links())
@@ -98,6 +99,7 @@ export default function TreeVisualizer({ data }: TreeVisualizerProps) {
       .attr("opacity", 1);
 
     // Create node groups
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const nodeGroups = treeContainer
       .selectAll(".node")
       .data(root.descendants())

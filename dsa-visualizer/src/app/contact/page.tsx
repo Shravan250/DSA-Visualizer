@@ -20,7 +20,7 @@ export default function Contact() {
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
               Have questions about DSA Visualizer? Want to collaborate or share
-              feedback? I'd love to hear from you!
+              feedback? I&apos;d love to hear from you!
             </p>
           </div>
 
