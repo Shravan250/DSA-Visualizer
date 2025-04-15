@@ -8,7 +8,7 @@ export type QueueOperations = {
   data: QueueItem[];
   enqueue: (value: number) => void;
   dequeue: () => void;
-  peek: () => number | null;
+  peek: () => Promise<void>;
   isEmpty: () => boolean;
   reset: () => void;
 };
