@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
-import { FlatTreeNode } from "@/hooks/useTreeOperations";
+import { FlatTreeNode } from "@/lib/types/tree";
 
 interface TreeVisualizerProps {
   data: FlatTreeNode[];

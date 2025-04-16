@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { ArrayOperations } from "@/hooks/useArrayOperations";
+import { ArrayOperations } from "@/lib/types/array";
 import { useState } from "react";
 
 interface ArrayVisualizerOverviewProps {

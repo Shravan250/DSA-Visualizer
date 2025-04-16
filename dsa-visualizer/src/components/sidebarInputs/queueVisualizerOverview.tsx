@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { QueueOperations } from "@/hooks/useQueueOperations";
+import { QueueOperations } from "@/lib/types/queue";
 import { useState } from "react";
 
 export default function QueueVisualizerOverview({

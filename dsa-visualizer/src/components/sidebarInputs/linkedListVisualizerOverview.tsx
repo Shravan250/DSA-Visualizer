@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { LinkedListOperations } from "@/hooks/useLinkedListOperations";
+import { LinkedListOperations } from "@/lib/types/linkedList";
 import { useState } from "react";
 
 export default function LinkedListVisualizerOverview({

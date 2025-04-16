@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { StackItem } from "@/hooks/useStackOperations";
 import * as d3 from "d3";
+import { StackItem } from "@/lib/types/stack";
 
 interface StackVisualizerProps {
   data: StackItem[];

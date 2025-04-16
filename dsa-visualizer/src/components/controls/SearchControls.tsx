@@ -7,22 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { SearchMethod } from "@/lib/types/searching";
+import { SearchControlsProps, SearchMethod } from "@/lib/types/searching";
 import { getSearchAlgorithmDescription } from "@/lib/utils/searchingDescriptions";
-
-interface SearchControlsProps {
-  arraySize: string;
-  setArraySize: (size: string) => void;
-  selectedMethod: SearchMethod;
-  setSelectedMethod: (method: SearchMethod) => void;
-  searchValue: string;
-  setSearchValue: (value: string) => void;
-  stepDelay: number;
-  setStepDelay: (delay: number) => void;
-  onGenerateArray: () => void;
-  onSearch: () => void;
-  isSearching: boolean;
-}
 
 export function SearchControls({
   arraySize,
