@@ -1,4 +1,5 @@
 // GeneralVisualizer.tsx
+import type { JSX } from "react";
 import { TreeOperations } from "@/hooks/useTreeOperations";
 import { ArrayOperations } from "@/lib/types/array";
 import { LinkedListOperations } from "@/lib/types/linkedList";
