@@ -96,7 +96,10 @@ export default function useTreeOperations() {
           };
         };
 
-        const highlightedRoot = highlightNode(updatedRoot, sortedValues[i]);
+        const highlightedRoot = highlightNode(
+          updatedRoot as TreeNode,
+          sortedValues[i]
+        );
         setRoot(highlightedRoot);
         updateFlatData(highlightedRoot);
 
@@ -179,7 +182,7 @@ export default function useTreeOperations() {
 
     try {
       const path: TreeNode[] = [];
-      let current = root;
+      let current: TreeNode | null = root;
 
       // Animate search for node to delete
       while (current && current.value !== value) {
@@ -227,7 +230,7 @@ export default function useTreeOperations() {
     setOperationInProgress(true);
 
     try {
-      let current = root;
+      let current: TreeNode | null = root;
       const path: TreeNode[] = [];
 
       while (current) {
@@ -453,7 +456,7 @@ export default function useTreeOperations() {
       };
     };
 
-    const newRoot = updateNodeState(updatedRoot, node.id, state);
+    const newRoot = updateNodeState(updatedRoot as TreeNode, node.id, state);
     setRoot(newRoot);
     if (shouldUpdateFlatData) {
       updateFlatData(newRoot);
